@@ -1,0 +1,37 @@
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    background: #f5f2ed;
+    color: #222;
+}
+
+header {
+    padding: 80px 10%;
+    background: #111;
+    color: white;
+}
+
+header h1 {
+    font-size: 52px;
+    margin: 0 0 20px;
+}
+
+header p {
+    font-size: 22px;
+}
+
+main {
+    max-width: 1000px;
+    margin: auto;
+    padding: 70px 10%;
+}
+
+main h2 {
+    font-size: 36px;
+}
+
+main p {
+    font-size: 18px;
+    line-height: 1.8;
+}
