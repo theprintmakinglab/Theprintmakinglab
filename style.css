@@ -1813,3 +1813,8 @@ a {
     }
 
 }
+.site-logo {
+    width: 220px;
+    height: auto;
+    display: block;
+}
