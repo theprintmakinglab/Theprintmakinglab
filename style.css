@@ -1,37 +1,1815 @@
-body {
+/* =========================================================
+   THE PRINTMAKING LAB
+   PROFESSIONAL HOMEPAGE
+========================================================= */
+
+
+/* =========================================================
+   RESET
+========================================================= */
+
+* {
     margin: 0;
     padding: 0;
-    font-family: Arial, sans-serif;
-    background: #f5f2ed;
-    color: #222;
+    box-sizing: border-box;
 }
 
-header {
-    padding: 80px 10%;
-    background: #111;
-    color: white;
+
+html {
+    scroll-behavior: smooth;
 }
 
-header h1 {
-    font-size: 52px;
-    margin: 0 0 20px;
+
+body {
+    font-family:
+        Arial,
+        Helvetica,
+        sans-serif;
+
+    background: #f5f2ec;
+
+    color: #151515;
+
+    line-height: 1.6;
 }
 
-header p {
-    font-size: 22px;
+
+img {
+    max-width: 100%;
+    display: block;
 }
 
-main {
-    max-width: 1000px;
-    margin: auto;
-    padding: 70px 10%;
+
+a {
+    color: inherit;
+    text-decoration: none;
 }
 
-main h2 {
-    font-size: 36px;
+
+/* =========================================================
+   VARIABLES
+========================================================= */
+
+:root {
+
+    --black: #111111;
+
+    --dark: #181818;
+
+    --paper: #f5f2ec;
+
+    --paper-dark: #e7e1d7;
+
+    --white: #ffffff;
+
+    --grey: #777777;
+
+    --light-grey: #aaaaaa;
+
+    --border: #d3cec5;
+
+    --max-width: 1240px;
+
 }
 
-main p {
-    font-size: 18px;
-    line-height: 1.8;
+
+/* =========================================================
+   GENERAL
+========================================================= */
+
+.container {
+
+    width:
+        min(
+            calc(100% - 48px),
+            var(--max-width)
+        );
+
+    margin-left: auto;
+
+    margin-right: auto;
+
+}
+
+
+.narrow {
+
+    max-width: 920px;
+
+}
+
+
+.section {
+
+    padding-top: 110px;
+
+    padding-bottom: 110px;
+
+}
+
+
+.section-paper {
+
+    background:
+        var(--paper-dark);
+
+}
+
+
+.section-label {
+
+    font-size: 11px;
+
+    font-weight: 700;
+
+    letter-spacing: 3px;
+
+    text-transform: uppercase;
+
+    margin-bottom: 22px;
+
+}
+
+
+.section-label.light {
+
+    color: #999999;
+
+}
+
+
+.text-link {
+
+    display: inline-block;
+
+    margin-top: 24px;
+
+    padding-bottom: 4px;
+
+    border-bottom:
+        1px solid currentColor;
+
+    font-size: 13px;
+
+    font-weight: 700;
+
+    letter-spacing: 1px;
+
+    text-transform: uppercase;
+
+    transition:
+        opacity 0.3s ease;
+
+}
+
+
+.text-link:hover {
+
+    opacity: 0.5;
+
+}
+
+
+/* =========================================================
+   HEADER
+========================================================= */
+
+.site-header {
+
+    position: sticky;
+
+    top: 0;
+
+    z-index: 1000;
+
+    background:
+        rgba(245, 242, 236, 0.96);
+
+    border-bottom:
+        1px solid var(--border);
+
+}
+
+
+.navigation {
+
+    min-height: 90px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    gap: 40px;
+
+}
+
+
+.brand {
+
+    display: flex;
+
+    flex-direction: column;
+
+    flex-shrink: 0;
+
+}
+
+
+.brand-name {
+
+    font-size: 17px;
+
+    font-weight: 800;
+
+    letter-spacing: 1.5px;
+
+}
+
+
+.brand-location {
+
+    margin-top: 3px;
+
+    font-size: 9px;
+
+    color: var(--grey);
+
+    letter-spacing: 3px;
+
+}
+
+
+.nav-menu {
+
+    display: flex;
+
+    flex-wrap: wrap;
+
+    justify-content: flex-end;
+
+    gap: 22px;
+
+}
+
+
+.nav-menu a {
+
+    font-size: 11px;
+
+    font-weight: 700;
+
+    text-transform: uppercase;
+
+    letter-spacing: 1px;
+
+    transition:
+        opacity 0.3s ease;
+
+}
+
+
+.nav-menu a:hover {
+
+    opacity: 0.45;
+
+}
+
+
+/* =========================================================
+   HERO
+========================================================= */
+
+.hero {
+
+    padding:
+        100px 0 110px;
+
+    background:
+        var(--paper);
+
+}
+
+
+.hero-layout {
+
+    display: grid;
+
+    grid-template-columns:
+        1fr 0.9fr;
+
+    gap: 80px;
+
+    align-items: center;
+
+}
+
+
+.eyebrow {
+
+    margin-bottom: 30px;
+
+    font-size: 11px;
+
+    font-weight: 700;
+
+    letter-spacing: 3px;
+
+}
+
+
+.hero h1 {
+
+    margin-bottom: 35px;
+
+    font-family:
+        Georgia,
+        "Times New Roman",
+        serif;
+
+    font-size:
+        clamp(
+            58px,
+            7vw,
+            100px
+        );
+
+    font-weight: 400;
+
+    line-height: 0.94;
+
+    letter-spacing: -4px;
+
+}
+
+
+.hero-description {
+
+    max-width: 610px;
+
+    font-size: 21px;
+
+    line-height: 1.55;
+
+    color: #555555;
+
+}
+
+
+.hero-buttons {
+
+    display: flex;
+
+    flex-wrap: wrap;
+
+    gap: 12px;
+
+    margin-top: 40px;
+
+}
+
+
+.button {
+
+    display: inline-block;
+
+    padding:
+        15px 25px;
+
+    font-size: 11px;
+
+    font-weight: 700;
+
+    text-transform: uppercase;
+
+    letter-spacing: 1.5px;
+
+    transition:
+        background 0.3s ease,
+        color 0.3s ease,
+        transform 0.3s ease;
+
+}
+
+
+.button:hover {
+
+    transform:
+        translateY(-2px);
+
+}
+
+
+.button-dark {
+
+    background:
+        var(--black);
+
+    color:
+        var(--white);
+
+}
+
+
+.button-dark:hover {
+
+    background:
+        #333333;
+
+}
+
+
+.button-outline {
+
+    border:
+        1px solid var(--black);
+
+    color:
+        var(--black);
+
+}
+
+
+.button-outline:hover {
+
+    background:
+        var(--black);
+
+    color:
+        var(--white);
+
+}
+
+
+.button-light {
+
+    border:
+        1px solid white;
+
+    color:
+        white;
+
+}
+
+
+.button-light:hover {
+
+    background:
+        white;
+
+    color:
+        black;
+
+}
+
+
+/* =========================================================
+   IMAGE PLACEHOLDERS
+========================================================= */
+
+.image-placeholder {
+
+    min-height:
+        590px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #d8d1c6,
+            #aaa296
+        );
+
+    display:
+        flex;
+
+    flex-direction:
+        column;
+
+    justify-content:
+        center;
+
+    align-items:
+        center;
+
+    text-align:
+        center;
+
+    color:
+        #555555;
+
+}
+
+
+.image-placeholder span {
+
+    font-size:
+        11px;
+
+    font-weight:
+        700;
+
+    letter-spacing:
+        3px;
+
+}
+
+
+.image-placeholder small {
+
+    margin-top:
+        12px;
+
+    font-size:
+        13px;
+
+    color:
+        #666666;
+
+}
+
+
+/* =========================================================
+   INTRODUCTION
+========================================================= */
+
+.introduction {
+
+    padding:
+        130px 0;
+
+    background:
+        white;
+
+}
+
+
+.introduction h2 {
+
+    margin-bottom:
+        35px;
+
+    font-family:
+        Georgia,
+        "Times New Roman",
+        serif;
+
+    font-size:
+        clamp(
+            40px,
+            5vw,
+            70px
+        );
+
+    font-weight:
+        400;
+
+    line-height:
+        1.06;
+
+    letter-spacing:
+        -2px;
+
+}
+
+
+.intro-text {
+
+    max-width:
+        850px;
+
+    font-size:
+        21px;
+
+    line-height:
+        1.7;
+
+    color:
+        #555555;
+
+}
+
+
+/* =========================================================
+   FEATURED PROJECT
+========================================================= */
+
+.featured-project {
+
+    padding:
+        120px 0;
+
+    background:
+        white;
+
+}
+
+
+.project-layout {
+
+    display:
+        grid;
+
+    grid-template-columns:
+        1.2fr 0.8fr;
+
+    gap:
+        80px;
+
+    align-items:
+        center;
+
+}
+
+
+.large-placeholder {
+
+    min-height:
+        590px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #aaa398,
+            #d8d2c8
+        );
+
+    display:
+        flex;
+
+    align-items:
+        center;
+
+    justify-content:
+        center;
+
+    color:
+        #555555;
+
+    font-size:
+        11px;
+
+    font-weight:
+        700;
+
+    letter-spacing:
+        3px;
+
+}
+
+
+.project-content h2 {
+
+    margin-bottom:
+        25px;
+
+    font-family:
+        Georgia,
+        "Times New Roman",
+        serif;
+
+    font-size:
+        clamp(
+            50px,
+            6vw,
+            82px
+        );
+
+    font-weight:
+        400;
+
+    line-height:
+        1;
+
+}
+
+
+.project-content > p:not(.section-label) {
+
+    margin-bottom:
+        30px;
+
+    font-size:
+        19px;
+
+    line-height:
+        1.7;
+
+    color:
+        #555555;
+
+}
+
+
+/* =========================================================
+   SECTION HEADINGS
+========================================================= */
+
+.section-heading {
+
+    display:
+        flex;
+
+    align-items:
+        flex-end;
+
+    justify-content:
+        space-between;
+
+    gap:
+        40px;
+
+    margin-bottom:
+        55px;
+
+}
+
+
+.section-heading h2 {
+
+    font-family:
+        Georgia,
+        "Times New Roman",
+        serif;
+
+    font-size:
+        clamp(
+            42px,
+            5vw,
+            70px
+        );
+
+    font-weight:
+        400;
+
+    line-height:
+        1;
+
+    letter-spacing:
+        -2px;
+
+}
+
+
+/* =========================================================
+   JOURNAL CARDS
+========================================================= */
+
+.card-grid {
+
+    display:
+        grid;
+
+    grid-template-columns:
+        repeat(3, 1fr);
+
+    gap:
+        30px;
+
+}
+
+
+.content-card {
+
+    background:
+        white;
+
+}
+
+
+.card-image {
+
+    min-height:
+        260px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #bcb5aa,
+            #ded9d0
+        );
+
+    display:
+        flex;
+
+    align-items:
+        center;
+
+    justify-content:
+        center;
+
+    color:
+        #555555;
+
+    font-size:
+        11px;
+
+    font-weight:
+        700;
+
+    letter-spacing:
+        3px;
+
+}
+
+
+.card-body {
+
+    padding:
+        28px;
+
+}
+
+
+.category {
+
+    margin-bottom:
+        12px;
+
+    font-size:
+        10px;
+
+    font-weight:
+        700;
+
+    color:
+        var(--grey);
+
+    letter-spacing:
+        2px;
+
+}
+
+
+.card-body h3 {
+
+    margin-bottom:
+        15px;
+
+    font-family:
+        Georgia,
+        "Times New Roman",
+        serif;
+
+    font-size:
+        27px;
+
+    font-weight:
+        400;
+
+    line-height:
+        1.15;
+
+}
+
+
+.card-body > p:not(.category) {
+
+    color:
+        #666666;
+
+}
+
+
+/* =========================================================
+   DARK / EXHIBITIONS
+========================================================= */
+
+.dark-section {
+
+    background:
+        var(--dark);
+
+    color:
+        white;
+
+}
+
+
+.dark-section h2 {
+
+    margin-bottom:
+        28px;
+
+    font-family:
+        Georgia,
+        "Times New Roman",
+        serif;
+
+    font-size:
+        clamp(
+            48px,
+            6vw,
+            82px
+        );
+
+    font-weight:
+        400;
+
+    line-height:
+        1;
+
+}
+
+
+.dark-introduction {
+
+    max-width:
+        700px;
+
+    margin-bottom:
+        60px;
+
+    font-size:
+        20px;
+
+    color:
+        #aaaaaa;
+
+}
+
+
+.exhibition-list {
+
+    border-top:
+        1px solid #3a3a3a;
+
+}
+
+
+.exhibition {
+
+    display:
+        grid;
+
+    grid-template-columns:
+        70px 1fr 40px;
+
+    gap:
+        25px;
+
+    align-items:
+        center;
+
+    padding:
+        30px 0;
+
+    border-bottom:
+        1px solid #3a3a3a;
+
+    transition:
+        padding 0.3s ease;
+
+}
+
+
+.exhibition:hover {
+
+    padding-left:
+        12px;
+
+}
+
+
+.number {
+
+    color:
+        #777777;
+
+    font-size:
+        12px;
+
+}
+
+
+.exhibition h3 {
+
+    font-family:
+        Georgia,
+        "Times New Roman",
+        serif;
+
+    font-size:
+        30px;
+
+    font-weight:
+        400;
+
+}
+
+
+.exhibition p {
+
+    margin-top:
+        5px;
+
+    color:
+        #888888;
+
+}
+
+
+.arrow {
+
+    color:
+        #888888;
+
+}
+
+
+/* =========================================================
+   ARTISTS
+========================================================= */
+
+.artist-grid {
+
+    display:
+        grid;
+
+    grid-template-columns:
+        repeat(4, 1fr);
+
+    gap:
+        25px;
+
+}
+
+
+.artist-image {
+
+    aspect-ratio:
+        1 / 1;
+
+    margin-bottom:
+        18px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #d8d2c7,
+            #aaa398
+        );
+
+    display:
+        flex;
+
+    align-items:
+        center;
+
+    justify-content:
+        center;
+
+    color:
+        #555555;
+
+    font-size:
+        10px;
+
+    font-weight:
+        700;
+
+    letter-spacing:
+        2px;
+
+}
+
+
+.artist h3 {
+
+    font-family:
+        Georgia,
+        "Times New Roman",
+        serif;
+
+    font-size:
+        23px;
+
+    font-weight:
+        400;
+
+}
+
+
+.artist p {
+
+    margin-top:
+        4px;
+
+    font-size:
+        13px;
+
+    color:
+        var(--grey);
+
+}
+
+
+/* =========================================================
+   VIDEOS
+========================================================= */
+
+.video-grid {
+
+    display:
+        grid;
+
+    grid-template-columns:
+        repeat(3, 1fr);
+
+    gap:
+        30px;
+
+}
+
+
+.video-placeholder {
+
+    aspect-ratio:
+        16 / 9;
+
+    margin-bottom:
+        20px;
+
+    background:
+        #222222;
+
+    display:
+        flex;
+
+    align-items:
+        center;
+
+    justify-content:
+        center;
+
+    color:
+        white;
+
+    font-size:
+        11px;
+
+    font-weight:
+        700;
+
+    letter-spacing:
+        2px;
+
+}
+
+
+.video h3 {
+
+    font-family:
+        Georgia,
+        "Times New Roman",
+        serif;
+
+    font-size:
+        26px;
+
+    font-weight:
+        400;
+
+    line-height:
+        1.2;
+
+}
+
+
+/* =========================================================
+   ARTICLES
+========================================================= */
+
+.two-column {
+
+    display:
+        grid;
+
+    grid-template-columns:
+        1fr 1fr;
+
+    gap:
+        100px;
+
+    align-items:
+        center;
+
+}
+
+
+.two-column h2 {
+
+    font-family:
+        Georgia,
+        "Times New Roman",
+        serif;
+
+    font-size:
+        clamp(
+            45px,
+            5vw,
+            72px
+        );
+
+    font-weight:
+        400;
+
+    line-height:
+        1;
+
+}
+
+
+.large-copy {
+
+    font-size:
+        21px;
+
+    line-height:
+        1.7;
+
+    color:
+        #555555;
+
+}
+
+
+/* =========================================================
+   ART INVESTMENT
+========================================================= */
+
+.investment {
+
+    padding:
+        110px 0;
+
+    background:
+        #171717;
+
+    color:
+        white;
+
+}
+
+
+.investment-layout {
+
+    display:
+        grid;
+
+    grid-template-columns:
+        1fr 1fr;
+
+    gap:
+        80px;
+
+    align-items:
+        center;
+
+}
+
+
+.investment h2 {
+
+    margin-bottom:
+        30px;
+
+    font-family:
+        Georgia,
+        "Times New Roman",
+        serif;
+
+    font-size:
+        clamp(
+            50px,
+            6vw,
+            90px
+        );
+
+    font-weight:
+        400;
+
+    line-height:
+        1;
+
+}
+
+
+.investment > .container > div:first-child > p:not(.section-label) {
+
+    max-width:
+        650px;
+
+    margin-bottom:
+        30px;
+
+    font-size:
+        20px;
+
+    color:
+        #aaaaaa;
+
+}
+
+
+.investment-statement {
+
+    display:
+        flex;
+
+    flex-direction:
+        column;
+
+    align-items:
+        center;
+
+    justify-content:
+        center;
+
+    font-family:
+        Georgia,
+        "Times New Roman",
+        serif;
+
+    font-size:
+        45px;
+
+    color:
+        #777777;
+
+}
+
+
+.investment-statement strong {
+
+    color:
+        white;
+
+    font-size:
+        35px;
+
+}
+
+
+/* =========================================================
+   SUPPORT
+========================================================= */
+
+.support {
+
+    padding:
+        110px 0;
+
+    background:
+        linear-gradient(
+            135deg,
+            #d8d2c8,
+            #eeeae3
+        );
+
+}
+
+
+.support-content {
+
+    max-width:
+        900px;
+
+}
+
+
+.support h2 {
+
+    margin-bottom:
+        30px;
+
+    font-family:
+        Georgia,
+        "Times New Roman",
+        serif;
+
+    font-size:
+        clamp(
+            45px,
+            6vw,
+            78px
+        );
+
+    font-weight:
+        400;
+
+    line-height:
+        1.05;
+
+}
+
+
+.support-content > p:not(.section-label) {
+
+    max-width:
+        700px;
+
+    margin-bottom:
+        30px;
+
+    font-size:
+        20px;
+
+    color:
+        #555555;
+
+}
+
+
+.support-buttons {
+
+    display:
+        flex;
+
+    flex-wrap:
+        wrap;
+
+    gap:
+        12px;
+
+}
+
+
+/* =========================================================
+   FOOTER
+========================================================= */
+
+.footer {
+
+    padding-top:
+        80px;
+
+    background:
+        #111111;
+
+    color:
+        white;
+
+}
+
+
+.footer-grid {
+
+    display:
+        grid;
+
+    grid-template-columns:
+        2fr 1fr 1fr 1fr;
+
+    gap:
+        50px;
+
+    padding-bottom:
+        70px;
+
+}
+
+
+.footer-brand h3 {
+
+    margin-bottom:
+        15px;
+
+    font-size:
+        18px;
+
+    font-weight:
+        800;
+
+    letter-spacing:
+        2px;
+
+}
+
+
+.footer p {
+
+    margin-bottom:
+        8px;
+
+    font-size:
+        13px;
+
+    color:
+        #888888;
+
+}
+
+
+.footer h4 {
+
+    margin-bottom:
+        20px;
+
+    font-size:
+        11px;
+
+    text-transform:
+        uppercase;
+
+    letter-spacing:
+        2px;
+
+}
+
+
+.footer a {
+
+    display:
+        block;
+
+    margin-bottom:
+        10px;
+
+    font-size:
+        13px;
+
+    color:
+        #999999;
+
+    transition:
+        color 0.3s ease;
+
+}
+
+
+.footer a:hover {
+
+    color:
+        white;
+
+}
+
+
+.footer-bottom {
+
+    display:
+        flex;
+
+    justify-content:
+        space-between;
+
+    gap:
+        20px;
+
+    padding:
+        25px 0;
+
+    border-top:
+        1px solid #333333;
+
+}
+
+
+.footer-bottom p {
+
+    margin:
+        0;
+
+    font-size:
+        11px;
+
+    color:
+        #666666;
+
+}
+
+
+/* =========================================================
+   TABLET
+========================================================= */
+
+@media (max-width: 950px) {
+
+
+    .navigation {
+
+        align-items:
+            flex-start;
+
+        flex-direction:
+            column;
+
+        padding:
+            20px 0;
+
+    }
+
+
+    .nav-menu {
+
+        justify-content:
+            flex-start;
+
+    }
+
+
+    .hero-layout {
+
+        grid-template-columns:
+            1fr;
+
+    }
+
+
+    .hero-image {
+
+        max-width:
+            750px;
+
+    }
+
+
+    .project-layout,
+    .investment-layout,
+    .two-column {
+
+        grid-template-columns:
+            1fr;
+
+        gap:
+            50px;
+
+    }
+
+
+    .card-grid,
+    .video-grid {
+
+        grid-template-columns:
+            repeat(2, 1fr);
+
+    }
+
+
+    .artist-grid {
+
+        grid-template-columns:
+            repeat(2, 1fr);
+
+    }
+
+
+    .footer-grid {
+
+        grid-template-columns:
+            repeat(2, 1fr);
+
+    }
+
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 650px) {
+
+
+    .container {
+
+        width:
+            calc(100% - 32px);
+
+    }
+
+
+    .nav-menu {
+
+        gap:
+            10px 16px;
+
+    }
+
+
+    .nav-menu a {
+
+        font-size:
+            9px;
+
+    }
+
+
+    .hero {
+
+        padding:
+            70px 0;
+
+    }
+
+
+    .hero h1 {
+
+        font-size:
+            56px;
+
+        letter-spacing:
+            -3px;
+
+    }
+
+
+    .hero-description {
+
+        font-size:
+            18px;
+
+    }
+
+
+    .image-placeholder {
+
+        min-height:
+            400px;
+
+    }
+
+
+    .section,
+    .introduction,
+    .featured-project,
+    .investment,
+    .support {
+
+        padding-top:
+            75px;
+
+        padding-bottom:
+            75px;
+
+    }
+
+
+    .section-heading {
+
+        align-items:
+            flex-start;
+
+        flex-direction:
+            column;
+
+        gap:
+            10px;
+
+    }
+
+
+    .card-grid,
+    .video-grid,
+    .artist-grid {
+
+        grid-template-columns:
+            1fr;
+
+    }
+
+
+    .large-placeholder {
+
+        min-height:
+            400px;
+
+    }
+
+
+    .exhibition {
+
+        grid-template-columns:
+            35px 1fr 25px;
+
+        gap:
+            12px;
+
+    }
+
+
+    .exhibition h3 {
+
+        font-size:
+            23px;
+
+    }
+
+
+    .footer-grid {
+
+        grid-template-columns:
+            1fr;
+
+    }
+
+
+    .footer-bottom {
+
+        flex-direction:
+            column;
+
+    }
+
 }
