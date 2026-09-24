@@ -1,3 +1,4 @@
+
 const artworks = [
     {
         image: "images/long-necked-man.jpg",
@@ -38,6 +39,7 @@ const artworks = [
 ];
 
 let currentArtwork = 0;
+let slideshowTimer;
 
 function showArtwork(index) {
 
@@ -55,7 +57,7 @@ function showArtwork(index) {
 
     image.classList.add("fade-out");
 
-    setTimeout(() => {
+    setTimeout(function () {
 
         image.src = artwork.image;
         image.alt = artwork.title;
@@ -96,17 +98,17 @@ function previousArtwork() {
 }
 
 
-/* Automatic slideshow — every 5 seconds */
+function startSlideshow() {
 
-let slideshowTimer = setInterval(
-    nextArtwork,
-    5000
-);
+    clearInterval(slideshowTimer);
+
+    slideshowTimer = setInterval(function () {
+        nextArtwork();
+    }, 5000);
+}
 
 
-/* Start when page is ready */
-
-document.addEventListener("DOMContentLoaded", () => {
+document.addEventListener("DOMContentLoaded", function () {
 
     showArtwork(0);
 
@@ -117,71 +119,28 @@ document.addEventListener("DOMContentLoaded", () => {
         document.querySelector(".slider-prev");
 
     if (nextButton) {
-        nextButton.addEventListener(
-            "click",
-            () => {
-                nextArtwork();
-                resetSlideshow();
-            }
-        );
+
+        nextButton.addEventListener("click", function () {
+
+            nextArtwork();
+            startSlideshow();
+
+        });
+
     }
 
     if (previousButton) {
-        previousButton.addEventListener(
-            "click",
-            () => {
-                previousArtwork();
-                resetSlideshow();
-            }
-        );
+
+        previousButton.addEventListener("click", function () {
+
+            previousArtwork();
+            startSlideshow();
+
+        });
+
     }
+
+    startSlideshow();
 
 });
 
-
-function resetSlideshow() {
-
-    clearInterval(slideshowTimer);
-
-    slideshowTimer = setInterval(
-        nextArtwork,
-        5000
-    );
-}const artworks = [
-    {
-        image: "images/long-necked-man.jpg",
-        title: "Long-necked Man",
-        artist: "Jagath Weerasinhae",
-        details: "1989 · Woodblock print"
-    },
-    {
-        image: "images/things-shadow-raging-sea.jpg",
-        title: "Things, Shadow and Raging Sea",
-        artist: "Prasanna Ranabahu",
-        details: "2019 · Photo print · 66.5 × 42.1 cm"
-    },
-    {
-        image: "images/broken-hand-iii.jpg",
-        title: "Broken Hand III – The Peales Bomb Went Off",
-        artist: "Pradeep Chandrasiri",
-        details: "1999 · Photo print"
-    },
-    {
-        image: "images/perforated-body.png",
-        title: "Perforated Body",
-        artist: "Bandu Manamperi",
-        details: "2008 · Sheet Size 4R"
-    },
-    {
-        image: "images/story-of-hammer-and-nails.jpeg",
-        title: "The Story of Hammer and Nails",
-        artist: "Anusha Gajaweera",
-        details: "2018 · Mixed media on acid-free paper · 50 × 36 cm"
-    },
-    {
-        image: "images/what-remains.jpg",
-        title: "What Remains",
-        artist: "Buddhika Nakandala",
-        details: "2026 · Monotype · 31 × 45 cm · Acid-free paper"
-    }
-];
