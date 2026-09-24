@@ -1824,3 +1824,771 @@ header .site-logo {
     max-width: 110px !important;
     height: auto !important;
 }
+/* =====================================================
+   THE PRINTMAKING LAB
+   MAIN WEBSITE STYLES
+===================================================== */
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    line-height: 1.6;
+    color: #171717;
+    background: #ffffff;
+}
+
+img {
+    max-width: 100%;
+    display: block;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+
+/* =====================================================
+   HEADER
+===================================================== */
+
+.site-header {
+    background: #ffffff;
+    border-bottom: 1px solid #e5e5e5;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.header-inner {
+    max-width: 1200px;
+    margin: auto;
+    padding: 15px 25px;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 30px;
+}
+
+
+/* LOGO */
+
+.site-logo {
+    width: 150px;
+    max-width: 150px;
+    height: auto;
+}
+
+
+/* NAVIGATION */
+
+.main-nav {
+    display: flex;
+    align-items: center;
+    gap: 22px;
+    flex-wrap: wrap;
+}
+
+.main-nav a {
+    font-size: 13px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+
+    transition: opacity 0.3s ease;
+}
+
+.main-nav a:hover {
+    opacity: 0.55;
+}
+
+
+/* =====================================================
+   HERO
+===================================================== */
+
+.hero {
+    min-height: 600px;
+
+    display: flex;
+    align-items: center;
+
+    background:
+        linear-gradient(
+            rgba(255,255,255,0.92),
+            rgba(255,255,255,0.92)
+        );
+
+    border-bottom: 1px solid #eeeeee;
+}
+
+.hero-content {
+    width: 1200px;
+    max-width: 90%;
+    margin: auto;
+}
+
+.eyebrow,
+.section-label {
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+}
+
+.eyebrow {
+    margin-bottom: 20px;
+}
+
+.hero h1 {
+    font-size: clamp(48px, 8vw, 100px);
+    line-height: 0.95;
+    max-width: 900px;
+    margin-bottom: 30px;
+    font-weight: 700;
+}
+
+.hero-text {
+    max-width: 650px;
+    font-size: 20px;
+    color: #555;
+    margin-bottom: 35px;
+}
+
+.hero-buttons {
+    display: flex;
+    gap: 15px;
+    flex-wrap: wrap;
+}
+
+
+/* =====================================================
+   BUTTONS
+===================================================== */
+
+.button {
+    display: inline-block;
+
+    padding: 13px 24px;
+
+    background: #171717;
+    color: #ffffff;
+
+    border: 1px solid #171717;
+
+    font-size: 13px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.8px;
+
+    transition:
+        background 0.3s ease,
+        color 0.3s ease;
+}
+
+.button:hover {
+    background: #ffffff;
+    color: #171717;
+}
+
+.button-outline {
+    background: transparent;
+    color: #171717;
+}
+
+
+/* =====================================================
+   GENERAL SECTIONS
+===================================================== */
+
+.content-section,
+.featured-artwork-section,
+.feature-section,
+.investment-section,
+.support-section {
+    padding: 100px 25px;
+}
+
+.section-heading {
+    max-width: 1200px;
+    margin: 0 auto 50px;
+}
+
+.section-heading h2 {
+    font-size: clamp(36px, 5vw, 60px);
+    line-height: 1;
+    margin: 12px 0 20px;
+}
+
+.section-heading > p:last-child {
+    max-width: 650px;
+    color: #666;
+}
+
+
+/* =====================================================
+   FEATURED ARTWORK
+===================================================== */
+
+.featured-artwork-section {
+    background: #f4f4f2;
+}
+
+.artwork-slider {
+    max-width: 1200px;
+    margin: auto;
+
+    display: grid;
+
+    grid-template-columns:
+        minmax(0, 1.7fr)
+        minmax(280px, 0.8fr);
+
+    gap: 50px;
+
+    position: relative;
+}
+
+
+/* IMAGE */
+
+.slider-image-container {
+    position: relative;
+
+    width: 100%;
+    height: 650px;
+
+    overflow: hidden;
+    background: #dedede;
+}
+
+.artwork-image {
+    width: 100%;
+    height: 100%;
+
+    object-fit: contain;
+
+    transition:
+        opacity 0.7s ease,
+        transform 0.7s ease;
+
+    opacity: 1;
+}
+
+
+/* Fade animation */
+
+.artwork-image.fade-out {
+    opacity: 0;
+}
+
+
+/* INFORMATION */
+
+.artwork-information {
+    align-self: center;
+    padding: 20px 0;
+}
+
+.artwork-number {
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    margin-bottom: 25px;
+}
+
+.artwork-information h3 {
+    font-size: clamp(32px, 4vw, 55px);
+    line-height: 1;
+    margin-bottom: 20px;
+}
+
+.artwork-artist {
+    font-size: 20px;
+    font-weight: 600;
+    margin-bottom: 8px;
+}
+
+.artwork-details {
+    font-size: 15px;
+    color: #555;
+    margin-bottom: 25px;
+}
+
+.artwork-description {
+    font-size: 14px;
+    color: #666;
+    max-width: 400px;
+}
+
+
+/* ARROWS */
+
+.slider-arrow {
+    position: absolute;
+
+    top: 50%;
+
+    width: 48px;
+    height: 48px;
+
+    border: none;
+
+    background: rgba(255,255,255,0.92);
+
+    cursor: pointer;
+
+    font-size: 22px;
+
+    transform: translateY(-50%);
+
+    transition:
+        background 0.3s ease,
+        transform 0.3s ease;
+
+    z-index: 10;
+}
+
+.slider-arrow:hover {
+    background: #ffffff;
+}
+
+.slider-prev {
+    left: 15px;
+}
+
+.slider-next {
+    right: 15px;
+}
+
+
+/* DOTS */
+
+.slider-dots {
+    position: absolute;
+
+    left: 0;
+    bottom: -45px;
+
+    display: flex;
+    gap: 9px;
+}
+
+.slider-dot {
+    width: 9px;
+    height: 9px;
+
+    border-radius: 50%;
+
+    border: 1px solid #171717;
+
+    background: transparent;
+
+    cursor: pointer;
+
+    transition: background 0.3s ease;
+}
+
+.slider-dot.active {
+    background: #171717;
+}
+
+
+/* =====================================================
+   FEATURE PROJECT
+===================================================== */
+
+.feature-section {
+    background: #ffffff;
+}
+
+.feature-content {
+    max-width: 800px;
+    margin: auto;
+    text-align: center;
+}
+
+.feature-content h2 {
+    font-size: clamp(40px, 6vw, 75px);
+    margin: 15px 0 25px;
+}
+
+.feature-content p:not(.section-label) {
+    color: #666;
+    margin-bottom: 30px;
+}
+
+.text-link {
+    font-weight: 700;
+    border-bottom: 1px solid #171717;
+    padding-bottom: 4px;
+}
+
+
+/* =====================================================
+   CARDS
+===================================================== */
+
+.card-grid {
+    max-width: 1200px;
+    margin: auto;
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(3, 1fr);
+
+    gap: 20px;
+}
+
+.info-card {
+    border: 1px solid #dedede;
+    padding: 35px;
+
+    min-height: 220px;
+
+    transition:
+        transform 0.3s ease,
+        box-shadow 0.3s ease;
+}
+
+.info-card:hover {
+    transform: translateY(-4px);
+
+    box-shadow:
+        0 10px 30px rgba(0,0,0,0.08);
+}
+
+.info-card h3 {
+    font-size: 24px;
+    margin-bottom: 15px;
+}
+
+.info-card p {
+    color: #666;
+    margin-bottom: 20px;
+}
+
+.info-card a {
+    font-weight: 700;
+}
+
+
+/* =====================================================
+   DARK SECTIONS
+===================================================== */
+
+.dark-section {
+    padding: 100px 25px;
+
+    background: #171717;
+    color: #ffffff;
+}
+
+.dark-section .section-heading > p:last-child {
+    color: #bbbbbb;
+}
+
+.dark-card {
+    padding: 35px;
+
+    border: 1px solid #444;
+
+    min-height: 230px;
+
+    transition:
+        background 0.3s ease,
+        transform 0.3s ease;
+}
+
+.dark-card:hover {
+    background: #222;
+    transform: translateY(-4px);
+}
+
+.dark-card h3 {
+    font-size: 25px;
+    margin-bottom: 15px;
+}
+
+.dark-card p {
+    color: #bbbbbb;
+    margin-bottom: 25px;
+}
+
+.dark-card a {
+    font-weight: 700;
+}
+
+
+/* =====================================================
+   ARTISTS
+===================================================== */
+
+.artist-list {
+    max-width: 1200px;
+    margin: auto;
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(2, 1fr);
+}
+
+.artist-name {
+    padding: 30px 0;
+
+    border-bottom: 1px solid #dddddd;
+
+    font-size: clamp(25px, 4vw, 45px);
+
+    transition:
+        padding-left 0.3s ease;
+}
+
+.artist-name:hover {
+    padding-left: 15px;
+}
+
+
+/* =====================================================
+   VIDEOS
+===================================================== */
+
+.video-placeholder {
+    max-width: 1200px;
+    margin: auto;
+
+    padding: 70px;
+
+    background: #f3f3f3;
+
+    text-align: center;
+}
+
+.video-placeholder p {
+    font-size: 25px;
+    margin-bottom: 25px;
+}
+
+
+/* =====================================================
+   INVESTMENT
+===================================================== */
+
+.investment-section {
+    background: #e9e9e6;
+}
+
+.investment-content {
+    max-width: 900px;
+    margin: auto;
+    text-align: center;
+}
+
+.investment-content h2 {
+    font-size: clamp(40px, 7vw, 80px);
+    margin: 15px 0 25px;
+}
+
+.investment-content p:not(.section-label) {
+    max-width: 650px;
+    margin: 0 auto 30px;
+    color: #555;
+}
+
+
+/* =====================================================
+   ABOUT
+===================================================== */
+
+.about-grid {
+    max-width: 1200px;
+    margin: auto;
+
+    display: grid;
+
+    grid-template-columns:
+        0.8fr
+        1.2fr;
+
+    gap: 80px;
+}
+
+.about-grid h2 {
+    font-size: clamp(40px, 6vw, 70px);
+    line-height: 1;
+}
+
+.about-grid p {
+    margin-bottom: 20px;
+    color: #555;
+}
+
+
+/* =====================================================
+   SUPPORT
+===================================================== */
+
+.support-section {
+    background: #171717;
+    color: #ffffff;
+
+    text-align: center;
+}
+
+.support-section > div {
+    max-width: 800px;
+    margin: auto;
+}
+
+.support-section h2 {
+    font-size: clamp(40px, 6vw, 70px);
+    line-height: 1;
+    margin: 15px 0 25px;
+}
+
+.support-section p:not(.section-label) {
+    color: #bbbbbb;
+    margin-bottom: 30px;
+}
+
+
+/* =====================================================
+   FOOTER
+===================================================== */
+
+.site-footer {
+    background: #0c0c0c;
+    color: #ffffff;
+
+    padding: 50px 25px;
+}
+
+.footer-inner {
+    max-width: 1200px;
+    margin: auto;
+
+    display: flex;
+
+    justify-content: space-between;
+
+    gap: 30px;
+}
+
+.footer-inner h3 {
+    margin-bottom: 5px;
+}
+
+.footer-inner p {
+    color: #999;
+    font-size: 13px;
+}
+
+
+/* =====================================================
+   RESPONSIVE
+===================================================== */
+
+@media (max-width: 900px) {
+
+    .header-inner {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .main-nav {
+        gap: 15px;
+    }
+
+    .artwork-slider {
+        grid-template-columns: 1fr;
+    }
+
+    .slider-image-container {
+        height: 550px;
+    }
+
+    .artwork-information {
+        padding-top: 20px;
+    }
+
+    .card-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .about-grid {
+        grid-template-columns: 1fr;
+        gap: 40px;
+    }
+
+    .artist-list {
+        grid-template-columns: 1fr;
+    }
+
+    .footer-inner {
+        flex-direction: column;
+    }
+}
+
+
+@media (max-width: 600px) {
+
+    .content-section,
+    .featured-artwork-section,
+    .feature-section,
+    .investment-section,
+    .support-section,
+    .dark-section {
+        padding: 70px 18px;
+    }
+
+    .site-logo {
+        width: 130px;
+        max-width: 130px;
+    }
+
+    .hero {
+        min-height: 500px;
+    }
+
+    .hero h1 {
+        font-size: 50px;
+    }
+
+    .hero-text {
+        font-size: 17px;
+    }
+
+    .slider-image-container {
+        height: 400px;
+    }
+
+    .slider-arrow {
+        width: 42px;
+        height: 42px;
+    }
+
+    .slider-dots {
+        bottom: -35px;
+    }
+
+    .info-card,
+    .dark-card {
+        padding: 25px;
+    }
+
+    .video-placeholder {
+        padding: 40px 20px;
+    }
+}
