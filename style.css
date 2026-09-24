@@ -1819,7 +1819,7 @@ a {
     display: block;
 }
 /* The Printmaking Lab logo size */
-header .site-logo {
+header .site-logo colour {
     width: 150px !important;
     max-width: 150px !important;
     height: auto !important;
