@@ -1818,3 +1818,9 @@ a {
     height: auto;
     display: block;
 }
+/* The Printmaking Lab logo size */
+header .site-logo {
+    width: 150px !important;
+    max-width: 150px !important;
+    height: auto !important;
+}
