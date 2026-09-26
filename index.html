@@ -1,63 +1,1275 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+
     <meta charset="UTF-8">
 
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
 
     <meta name="description"
-          content="The Printmaking Lab — Art, Printmaking, Research and Collaboration from Sri Lanka.">
+          content="Art & Organic Farming by The Printmaking Lab explores printmaking, organic cultivation, natural materials, workshops and independent creative practice in Sri Lanka.">
 
     <meta name="author"
           content="The Printmaking Lab">
 
-    <meta name="keywords"
-          content="The Printmaking Lab, printmaking, Sri Lanka, contemporary art, woodcut, monoprint, monotype, exhibitions, artists, printmaking journal">
+    <meta name="robots"
+          content="index, follow">
 
-    <title>The Printmaking Lab | Art, Printmaking, Research & Collaboration</title>
+    <link rel="canonical"
+          href="https://theprintmakinlab.github.io/the-printmaking-lab/">
 
-    <link rel="stylesheet" href="style.css">
+    <title>
+        Art & Organic Farming | The Printmaking Lab, Sri Lanka
+    </title>
+
+    <!-- Open Graph -->
+    <meta property="og:title"
+          content="Art & Organic Farming | The Printmaking Lab">
+
+    <meta property="og:description"
+          content="An experimental project connecting art, printmaking, organic cultivation and the living landscape in Sri Lanka.">
+
+    <meta property="og:type"
+          content="website">
+
+    <meta property="og:url"
+          content="https://theprintmakinlab.github.io/the-printmaking-lab/">
+
+    <meta property="og:image"
+          content="images/hero.jpg">
+
+
+    <!-- Google-friendly theme -->
+    <meta name="theme-color"
+          content="#f4f1ea">
+
+
+    <style>
+
+        /* =====================================================
+           RESET
+        ===================================================== */
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+
+        body {
+            font-family:
+                "Helvetica Neue",
+                Helvetica,
+                Arial,
+                sans-serif;
+
+            background: #f4f1ea;
+
+            color: #171717;
+
+            line-height: 1.6;
+
+            -webkit-font-smoothing: antialiased;
+        }
+
+
+        img {
+            display: block;
+            width: 100%;
+            height: auto;
+        }
+
+
+        a {
+            color: inherit;
+            text-decoration: none;
+        }
+
+
+        /* =====================================================
+           GLOBAL
+        ===================================================== */
+
+        .container {
+            width: min(1180px, 90%);
+            margin: 0 auto;
+        }
+
+
+        .small-label {
+            font-size: 11px;
+
+            letter-spacing: 0.18em;
+
+            text-transform: uppercase;
+
+            font-weight: 600;
+
+            color: #666;
+        }
+
+
+        .section {
+            padding: 110px 0;
+        }
+
+
+        .section-title {
+            font-family:
+                Georgia,
+                "Times New Roman",
+                serif;
+
+            font-size:
+                clamp(42px, 6vw, 78px);
+
+            font-weight: 400;
+
+            line-height: 0.98;
+
+            letter-spacing: -0.035em;
+        }
+
+
+        .body-copy {
+            max-width: 650px;
+
+            font-size: 18px;
+
+            color: #4c4c4c;
+
+            line-height: 1.75;
+        }
+
+
+        .button {
+            display: inline-flex;
+
+            align-items: center;
+
+            gap: 15px;
+
+            padding: 15px 24px;
+
+            border: 1px solid #171717;
+
+            font-size: 12px;
+
+            font-weight: 600;
+
+            letter-spacing: 0.12em;
+
+            text-transform: uppercase;
+
+            transition:
+                background 0.3s ease,
+                color 0.3s ease;
+        }
+
+
+        .button:hover {
+            background: #171717;
+
+            color: #fff;
+        }
+
+
+        /* =====================================================
+           HEADER
+        ===================================================== */
+
+        header {
+            position: relative;
+
+            z-index: 20;
+
+            border-bottom: 1px solid #d8d4cc;
+        }
+
+
+        .navigation {
+            min-height: 86px;
+
+            display: flex;
+
+            align-items: center;
+
+            justify-content: space-between;
+
+            gap: 30px;
+        }
+
+
+        .logo {
+            font-size: 13px;
+
+            font-weight: 700;
+
+            letter-spacing: 0.13em;
+
+            text-transform: uppercase;
+        }
+
+
+        .logo span {
+            display: block;
+
+            font-size: 9px;
+
+            letter-spacing: 0.25em;
+
+            font-weight: 400;
+
+            margin-top: 4px;
+
+            color: #777;
+        }
+
+
+        .nav {
+            display: flex;
+
+            gap: 28px;
+
+            font-size: 11px;
+
+            letter-spacing: 0.12em;
+
+            text-transform: uppercase;
+        }
+
+
+        .nav a {
+            color: #555;
+
+            transition: color 0.2s ease;
+        }
+
+
+        .nav a:hover {
+            color: #000;
+        }
+
+
+        /* =====================================================
+           HERO
+        ===================================================== */
+
+        .hero {
+            min-height: 88vh;
+
+            display: flex;
+
+            align-items: center;
+
+            padding: 70px 0 100px;
+        }
+
+
+        .hero-grid {
+            display: grid;
+
+            grid-template-columns:
+                0.85fr 1.15fr;
+
+            gap: 70px;
+
+            align-items: center;
+        }
+
+
+        .hero-text {
+            padding-bottom: 20px;
+        }
+
+
+        .hero-title {
+            font-family:
+                Georgia,
+                "Times New Roman",
+                serif;
+
+            font-size:
+                clamp(58px, 8vw, 112px);
+
+            line-height: 0.88;
+
+            font-weight: 400;
+
+            letter-spacing: -0.055em;
+
+            margin: 24px 0 35px;
+        }
+
+
+        .hero-title em {
+            font-style: italic;
+        }
+
+
+        .hero-description {
+            max-width: 520px;
+
+            font-size: 19px;
+
+            line-height: 1.65;
+
+            color: #505050;
+
+            margin-bottom: 38px;
+        }
+
+
+        .hero-image {
+            position: relative;
+
+            min-height: 650px;
+
+            overflow: hidden;
+
+            background: #ddd8cd;
+        }
+
+
+        .hero-image img {
+            height: 100%;
+
+            min-height: 650px;
+
+            object-fit: cover;
+        }
+
+
+        .image-note {
+            position: absolute;
+
+            left: 20px;
+
+            bottom: 18px;
+
+            background: rgba(244,241,234,0.92);
+
+            padding: 8px 12px;
+
+            font-size: 9px;
+
+            letter-spacing: 0.12em;
+
+            text-transform: uppercase;
+        }
+
+
+        /* =====================================================
+           INTRODUCTION
+        ===================================================== */
+
+        .introduction {
+            background: #191919;
+
+            color: #f4f1ea;
+
+            padding: 130px 0;
+        }
+
+
+        .intro-grid {
+            display: grid;
+
+            grid-template-columns: 0.8fr 1.2fr;
+
+            gap: 80px;
+        }
+
+
+        .introduction .small-label {
+            color: #aaa;
+        }
+
+
+        .intro-heading {
+            font-family:
+                Georgia,
+                "Times New Roman",
+                serif;
+
+            font-size:
+                clamp(38px, 5vw, 68px);
+
+            font-weight: 400;
+
+            line-height: 1.05;
+
+            letter-spacing: -0.035em;
+
+            max-width: 850px;
+        }
+
+
+        .intro-copy {
+            margin-top: 45px;
+
+            max-width: 670px;
+
+            font-size: 18px;
+
+            line-height: 1.8;
+
+            color: #c4c0b9;
+        }
+
+
+        /* =====================================================
+           PROJECT
+        ===================================================== */
+
+        .project {
+            padding: 130px 0;
+        }
+
+
+        .project-header {
+            display: flex;
+
+            justify-content: space-between;
+
+            align-items: flex-end;
+
+            gap: 40px;
+
+            margin-bottom: 70px;
+        }
+
+
+        .project-number {
+            font-family:
+                Georgia,
+                serif;
+
+            font-size: 20px;
+
+            color: #777;
+        }
+
+
+        .project-grid {
+            display: grid;
+
+            grid-template-columns:
+                1.25fr 0.75fr;
+
+            gap: 35px;
+
+            align-items: end;
+        }
+
+
+        .project-main-image {
+            background: #ddd8cd;
+
+            min-height: 620px;
+
+            overflow: hidden;
+        }
+
+
+        .project-main-image img {
+            height: 620px;
+
+            object-fit: cover;
+        }
+
+
+        .project-side {
+            padding: 20px 0 30px;
+        }
+
+
+        .project-side h3 {
+            font-family:
+                Georgia,
+                serif;
+
+            font-size: 40px;
+
+            font-weight: 400;
+
+            line-height: 1.05;
+
+            margin-bottom: 25px;
+        }
+
+
+        .project-side p {
+            color: #555;
+
+            line-height: 1.8;
+
+            margin-bottom: 30px;
+        }
+
+
+        /* =====================================================
+           WORKSHOPS
+        ===================================================== */
+
+        .workshops {
+            background: #e7e1d6;
+
+            padding: 120px 0;
+        }
+
+
+        .workshop-grid {
+            display: grid;
+
+            grid-template-columns:
+                1fr 1fr;
+
+            gap: 80px;
+
+            align-items: center;
+        }
+
+
+        .workshop-image {
+            overflow: hidden;
+
+            background: #ccc5b9;
+        }
+
+
+        .workshop-image img {
+            min-height: 560px;
+
+            object-fit: cover;
+        }
+
+
+        .workshop-content {
+            max-width: 570px;
+        }
+
+
+        .workshop-content h2 {
+            font-family:
+                Georgia,
+                serif;
+
+            font-size:
+                clamp(45px, 6vw, 76px);
+
+            line-height: 0.95;
+
+            font-weight: 400;
+
+            letter-spacing: -0.04em;
+
+            margin: 25px 0 30px;
+        }
+
+
+        .workshop-content p {
+            color: #555;
+
+            font-size: 18px;
+
+            line-height: 1.8;
+
+            margin-bottom: 28px;
+        }
+
+
+        .workshop-list {
+            list-style: none;
+
+            border-top: 1px solid #c5beb2;
+
+            margin: 35px 0;
+        }
+
+
+        .workshop-list li {
+            padding: 15px 0;
+
+            border-bottom: 1px solid #c5beb2;
+
+            display: flex;
+
+            justify-content: space-between;
+
+            font-size: 12px;
+
+            text-transform: uppercase;
+
+            letter-spacing: 0.1em;
+        }
+
+
+        /* =====================================================
+           INDEPENDENT PRACTICE
+        ===================================================== */
+
+        .practice {
+            padding: 140px 0;
+        }
+
+
+        .practice-grid {
+            display: grid;
+
+            grid-template-columns:
+                0.75fr 1.25fr;
+
+            gap: 100px;
+        }
+
+
+        .practice-title {
+            font-family:
+                Georgia,
+                serif;
+
+            font-size:
+                clamp(42px, 5vw, 70px);
+
+            line-height: 0.98;
+
+            font-weight: 400;
+
+            letter-spacing: -0.04em;
+        }
+
+
+        .practice-content p {
+            font-size: 21px;
+
+            line-height: 1.7;
+
+            color: #444;
+
+            max-width: 680px;
+
+            margin-bottom: 30px;
+        }
+
+
+        .practice-quote {
+            font-family:
+                Georgia,
+                serif;
+
+            font-size: 34px;
+
+            line-height: 1.25;
+
+            font-style: italic;
+
+            margin-top: 55px;
+
+            max-width: 720px;
+        }
+
+
+        /* =====================================================
+           LAND
+        ===================================================== */
+
+        .land {
+            background: #20241e;
+
+            color: #f4f1ea;
+
+            padding: 120px 0;
+        }
+
+
+        .land-grid {
+            display: grid;
+
+            grid-template-columns:
+                1fr 1fr;
+
+            gap: 50px;
+        }
+
+
+        .land-image {
+            min-height: 560px;
+
+            overflow: hidden;
+        }
+
+
+        .land-image img {
+            height: 560px;
+
+            object-fit: cover;
+        }
+
+
+        .land-content {
+            display: flex;
+
+            flex-direction: column;
+
+            justify-content: center;
+
+            padding: 40px;
+        }
+
+
+        .land-content .small-label {
+            color: #aaa;
+        }
+
+
+        .land-content h2 {
+            font-family:
+                Georgia,
+                serif;
+
+            font-size:
+                clamp(45px, 6vw, 80px);
+
+            line-height: 0.95;
+
+            font-weight: 400;
+
+            letter-spacing: -0.04em;
+
+            margin: 25px 0;
+        }
+
+
+        .land-content p {
+            color: #c4c7c0;
+
+            font-size: 18px;
+
+            line-height: 1.8;
+
+            max-width: 520px;
+        }
+
+
+        .location {
+            margin-top: 40px;
+
+            font-size: 11px;
+
+            letter-spacing: 0.18em;
+
+            text-transform: uppercase;
+
+            color: #aaa;
+        }
+
+
+        /* =====================================================
+           JOURNAL
+        ===================================================== */
+
+        .journal {
+            padding: 140px 0;
+        }
+
+
+        .journal-grid {
+            display: grid;
+
+            grid-template-columns:
+                0.8fr 1.2fr;
+
+            gap: 100px;
+        }
+
+
+        .journal-content h2 {
+            font-family:
+                Georgia,
+                serif;
+
+            font-size:
+                clamp(50px, 7vw, 90px);
+
+            line-height: 0.9;
+
+            font-weight: 400;
+
+            letter-spacing: -0.05em;
+
+            margin: 20px 0 35px;
+        }
+
+
+        .journal-content p {
+            max-width: 620px;
+
+            font-size: 19px;
+
+            color: #555;
+
+            line-height: 1.8;
+
+            margin-bottom: 35px;
+        }
+
+
+        .journal-image {
+            overflow: hidden;
+
+            background: #d8d2c7;
+        }
+
+
+        .journal-image img {
+            height: 560px;
+
+            object-fit: cover;
+        }
+
+
+        /* =====================================================
+           ART & ORGANIC FARMING
+        ===================================================== */
+
+        .organic {
+            border-top: 1px solid #d4cfc6;
+
+            padding: 120px 0 130px;
+        }
+
+
+        .organic-header {
+            display: flex;
+
+            justify-content: space-between;
+
+            gap: 40px;
+
+            margin-bottom: 65px;
+        }
+
+
+        .organic-title {
+            font-family:
+                Georgia,
+                serif;
+
+            font-size:
+                clamp(48px, 7vw, 92px);
+
+            font-weight: 400;
+
+            line-height: 0.9;
+
+            letter-spacing: -0.055em;
+
+            max-width: 800px;
+        }
+
+
+        .organic-grid {
+            display: grid;
+
+            grid-template-columns:
+                1fr 1fr;
+
+            gap: 35px;
+        }
+
+
+        .organic-image {
+            overflow: hidden;
+
+            background: #ddd8cd;
+        }
+
+
+        .organic-image img {
+            height: 470px;
+
+            object-fit: cover;
+        }
+
+
+        .organic-copy {
+            display: flex;
+
+            flex-direction: column;
+
+            justify-content: center;
+
+            padding: 30px;
+        }
+
+
+        .organic-copy p {
+            font-size: 18px;
+
+            line-height: 1.8;
+
+            color: #555;
+
+            margin-bottom: 25px;
+
+            max-width: 600px;
+        }
+
+
+        .organic-links {
+            display: flex;
+
+            gap: 15px;
+
+            flex-wrap: wrap;
+
+            margin-top: 15px;
+        }
+
+
+        /* =====================================================
+           CONTACT / PARTNERSHIP
+        ===================================================== */
+
+        .contact {
+            background: #ded8cc;
+
+            padding: 105px 0;
+        }
+
+
+        .contact-grid {
+            display: grid;
+
+            grid-template-columns:
+                1fr 1fr;
+
+            gap: 80px;
+        }
+
+
+        .contact h2 {
+            font-family:
+                Georgia,
+                serif;
+
+            font-size:
+                clamp(45px, 6vw, 78px);
+
+            font-weight: 400;
+
+            line-height: 0.95;
+
+            letter-spacing: -0.045em;
+        }
+
+
+        .contact-copy {
+            font-size: 18px;
+
+            line-height: 1.8;
+
+            color: #555;
+
+            max-width: 600px;
+        }
+
+
+        .contact-link {
+            display: inline-block;
+
+            margin-top: 30px;
+
+            font-size: 12px;
+
+            font-weight: 600;
+
+            letter-spacing: 0.14em;
+
+            text-transform: uppercase;
+
+            border-bottom: 1px solid #222;
+
+            padding-bottom: 8px;
+        }
+
+
+        /* =====================================================
+           FOOTER
+        ===================================================== */
+
+        footer {
+            background: #171717;
+
+            color: #f4f1ea;
+
+            padding: 70px 0 35px;
+        }
+
+
+        .footer-grid {
+            display: grid;
+
+            grid-template-columns:
+                1.4fr 0.6fr 0.6fr;
+
+            gap: 60px;
+
+            padding-bottom: 70px;
+        }
+
+
+        .footer-logo {
+            font-size: 14px;
+
+            font-weight: 700;
+
+            letter-spacing: 0.14em;
+        }
+
+
+        .footer-description {
+            max-width: 420px;
+
+            color: #aaa;
+
+            margin-top: 20px;
+
+            line-height: 1.7;
+        }
+
+
+        .footer-column h4 {
+            font-size: 10px;
+
+            letter-spacing: 0.18em;
+
+            text-transform: uppercase;
+
+            color: #888;
+
+            margin-bottom: 18px;
+        }
+
+
+        .footer-column a {
+            display: block;
+
+            font-size: 13px;
+
+            color: #ddd;
+
+            margin-bottom: 10px;
+        }
+
+
+        .footer-column a:hover {
+            color: #fff;
+        }
+
+
+        .footer-bottom {
+            border-top: 1px solid #333;
+
+            padding-top: 25px;
+
+            display: flex;
+
+            justify-content: space-between;
+
+            gap: 30px;
+
+            color: #777;
+
+            font-size: 11px;
+        }
+
+
+        /* =====================================================
+           RESPONSIVE
+        ===================================================== */
+
+        @media (max-width: 900px) {
+
+            .nav {
+                display: none;
+            }
+
+
+            .hero {
+                padding-top: 50px;
+            }
+
+
+            .hero-grid,
+            .intro-grid,
+            .project-grid,
+            .workshop-grid,
+            .practice-grid,
+            .land-grid,
+            .journal-grid,
+            .organic-grid,
+            .contact-grid {
+                grid-template-columns: 1fr;
+
+                gap: 45px;
+            }
+
+
+            .hero-image {
+                min-height: 520px;
+            }
+
+
+            .hero-image img {
+                min-height: 520px;
+            }
+
+
+            .project-main-image img {
+                height: 500px;
+            }
+
+
+            .land-image img {
+                height: 500px;
+            }
+
+
+            .journal-image img {
+                height: 480px;
+            }
+
+
+            .organic-image img {
+                height: 420px;
+            }
+
+
+            .project-header,
+            .organic-header {
+                flex-direction: column;
+
+                align-items: flex-start;
+            }
+
+
+            .footer-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+        }
+
+
+        @media (max-width: 600px) {
+
+            .section,
+            .project,
+            .practice,
+            .journal,
+            .organic {
+                padding: 85px 0;
+            }
+
+
+            .hero {
+                min-height: auto;
+
+                padding: 60px 0 80px;
+            }
+
+
+            .hero-title {
+                font-size: 62px;
+            }
+
+
+            .hero-image,
+            .hero-image img {
+                min-height: 420px;
+            }
+
+
+            .introduction {
+                padding: 90px 0;
+            }
+
+
+            .project-main-image img,
+            .land-image img,
+            .journal-image img,
+            .organic-image img {
+                height: 360px;
+            }
+
+
+            .footer-grid {
+                grid-template-columns: 1fr;
+
+                gap: 35px;
+            }
+
+
+            .footer-bottom {
+                flex-direction: column;
+            }
+        }
+
+    </style>
+
 </head>
 
 
 <body>
 
+
 <!-- =====================================================
      HEADER
 ===================================================== -->
 
-<header class="site-header">
+<header>
 
     <div class="container navigation">
 
-        <a href="index.html" class="brand">
+        <a href="#top" class="logo">
 
-            <span class="brand-name">
-                THE PRINTMAKING LAB
-            </span>
+            THE PRINTMAKING LAB
 
-            <span class="brand-location">
+            <span>
                 SRI LANKA
             </span>
 
         </a>
 
 
-        <nav class="nav-menu">
+        <nav class="nav">
 
-            <a href="#journal">Journal</a>
+            <a href="#project">
+                Project
+            </a>
 
-            <a href="#exhibitions">Exhibitions</a>
+            <a href="#workshops">
+                Workshops
+            </a>
 
-            <a href="#artists">Artists</a>
+            <a href="#land">
+                Land
+            </a>
 
-            <a href="#videos">Videos</a>
+            <a href="#journal">
+                Journal
+            </a>
 
-            <a href="#articles">Articles</a>
-
-            <a href="#investment">Art Investment</a>
-
-            <a href="#about">About</a>
+            <a href="#about">
+                About
+            </a>
 
         </nav>
 
@@ -66,61 +1278,66 @@
 </header>
 
 
+<main id="top">
+
 
 <!-- =====================================================
      HERO
 ===================================================== -->
 
-<main>
-
 <section class="hero">
 
-    <div class="container hero-layout">
+    <div class="container hero-grid">
 
-        <div class="hero-content">
 
-            <p class="eyebrow">
-                ART • PRINTMAKING • RESEARCH • COLLABORATION
+        <div class="hero-text">
+
+            <p class="small-label">
+                The Printmaking Lab · Sri Lanka
             </p>
 
-            <h1>
-                The Printmaking Lab
+
+            <h1 class="hero-title">
+
+                Art &amp;<br>
+
+                <em>Organic</em><br>
+
+                Farming
+
             </h1>
+
 
             <p class="hero-description">
 
-                An artist-led platform exploring printmaking,
-                contemporary art, research, education and
-                international collaboration from Sri Lanka.
+                An experimental project connecting
+                art, printmaking, organic cultivation
+                and the living landscape.
 
             </p>
 
 
-            <div class="hero-buttons">
+            <a href="#project"
+               class="button">
 
-                <a href="#journal" class="button button-dark">
-                    Explore the Journal
-                </a>
+                Explore the Project
+                <span>→</span>
 
-                <a href="#videos" class="button button-outline">
-                    Watch Videos
-                </a>
-
-            </div>
+            </a>
 
         </div>
 
 
         <div class="hero-image">
 
-            <div class="image-placeholder">
+            <!-- Replace with your main artwork/photo -->
 
-                <span>FEATURED ARTWORK</span>
+            <img src="images/hero.jpg"
+                 alt="Art and Organic Farming project by The Printmaking Lab in Sri Lanka"
+                 loading="eager">
 
-                <small>
-                    Replace this area with your artwork image
-                </small>
-
+            <div class="image-note">
+                Art · Land · Material
             </div>
 
         </div>
@@ -132,92 +1349,362 @@
 
 
 <!-- =====================================================
-     INTRO
+     INTRODUCTION
 ===================================================== -->
 
-<section class="introduction" id="about">
+<section class="introduction">
 
-    <div class="container narrow">
-
-        <p class="section-label">
-            THE LAB
-        </p>
-
-        <h2>
-            Printmaking as art,
-            research, dialogue
-            and collaboration.
-        </h2>
-
-        <p class="intro-text">
-
-            The Printmaking Lab is an artist-led platform
-            based in Sri Lanka, working across printmaking,
-            contemporary art, exhibitions, education,
-            research and international exchange.
-
-        </p>
-
-        <a href="https://printmakinglabgallery.wordpress.com/"
-           target="_blank"
-           class="text-link">
-
-            Visit the Printmaking Lab Archive →
-
-        </a>
-
-    </div>
-
-</section>
+    <div class="container intro-grid">
 
 
+        <div>
 
-<!-- =====================================================
-     FEATURED PROJECT
-===================================================== -->
-
-<section class="featured-project">
-
-    <div class="container project-layout">
-
-        <div class="project-image">
-
-            <div class="large-placeholder">
-
-                <span>
-                    FEATURED PROJECT
-                </span>
-
-            </div>
-
-        </div>
-
-
-        <div class="project-content">
-
-            <p class="section-label">
-                FEATURED PROJECT
+            <p class="small-label">
+                The Idea
             </p>
 
-            <h2>
-                Prints of Hope
+        </div>
+
+
+        <div>
+
+            <h2 class="intro-heading">
+
+                Where art,
+                cultivation and
+                material transformation
+                meet.
+
             </h2>
+
+
+            <p class="intro-copy">
+
+                At The Printmaking Lab, art and organic
+                farming grow from the same soil.
+
+                Compost, fallen leaves, discarded textiles,
+                plants, soil and living processes become
+                materials for observation, experimentation
+                and artistic practice.
+
+            </p>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- =====================================================
+     PROJECT
+===================================================== -->
+
+<section class="project"
+         id="project">
+
+    <div class="container">
+
+
+        <div class="project-header">
+
+            <div>
+
+                <p class="small-label">
+                    01 · The Project
+                </p>
+
+            </div>
+
+
+            <div class="project-number">
+                Art · Ecology · Printmaking
+            </div>
+
+        </div>
+
+
+        <div class="project-grid">
+
+
+            <div class="project-main-image">
+
+                <img src="images/project.jpg"
+                     alt="Organic cultivation and artistic practice at The Printmaking Lab"
+                     loading="lazy">
+
+            </div>
+
+
+            <div class="project-side">
+
+                <h3>
+                    A living field
+                    of slow
+                    transformations.
+                </h3>
+
+
+                <p>
+
+                    Organic farming here is not only
+                    food production. It is a practice
+                    of care and a way of observing
+                    transformation through soil,
+                    microorganisms, roots, moisture
+                    and time.
+
+                </p>
+
+
+                <p>
+
+                    The project brings ecological
+                    processes and printmaking into
+                    a shared living environment,
+                    connecting the studio with rural
+                    and forest landscapes.
+
+                </p>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- =====================================================
+     WORKSHOPS
+===================================================== -->
+
+<section class="workshops"
+         id="workshops">
+
+    <div class="container workshop-grid">
+
+
+        <div class="workshop-image">
+
+            <img src="images/workshop.jpg"
+                 alt="Hands-on art and organic farming workshop in Sri Lanka"
+                 loading="lazy">
+
+        </div>
+
+
+        <div class="workshop-content">
+
+            <p class="small-label">
+                02 · Workshops
+            </p>
+
+
+            <h2>
+                Learn by
+                making.
+            </h2>
+
 
             <p>
 
-                An international print exhibition bringing
-                artists together through printmaking,
-                dialogue, memory and shared experience.
+                Participants are invited to work
+                directly with materials, plants,
+                soil and artistic processes.
+
+                Workshops combine practical
+                experience with creative
+                experimentation.
 
             </p>
 
-            <a href="https://printmakinglabgallery.wordpress.com/"
-               target="_blank"
-               class="button button-dark">
 
-                Explore Project
+            <ul class="workshop-list">
+
+                <li>
+                    <span>
+                        Ecological Printmaking
+                    </span>
+
+                    <span>
+                        01
+                    </span>
+                </li>
+
+
+                <li>
+                    <span>
+                        Plant-Based Processes
+                    </span>
+
+                    <span>
+                        02
+                    </span>
+                </li>
+
+
+                <li>
+                    <span>
+                        Organic Cultivation
+                    </span>
+
+                    <span>
+                        03
+                    </span>
+                </li>
+
+
+                <li>
+                    <span>
+                        Material Exploration
+                    </span>
+
+                    <span>
+                        04
+                    </span>
+                </li>
+
+            </ul>
+
+
+            <a href="https://printmakinglabgallery.wordpress.com/art-and-organic-farming-new-project/"
+               target="_blank"
+               rel="noopener"
+               class="button">
+
+                Workshop &amp; Project Details
+                <span>→</span>
 
             </a>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- =====================================================
+     INDEPENDENT PRACTICE
+===================================================== -->
+
+<section class="practice">
+
+    <div class="container practice-grid">
+
+
+        <div>
+
+            <p class="small-label">
+                03 · Independent Practice
+            </p>
+
+
+            <h2 class="practice-title">
+
+                From learning
+                to making
+                independently.
+
+            </h2>
+
+        </div>
+
+
+        <div class="practice-content">
+
+            <p>
+
+                The project encourages participants
+                to move beyond guided activities,
+                develop their own ideas and continue
+                experimenting with materials and
+                processes independently.
+
+            </p>
+
+
+            <p>
+
+                The aim is not simply to teach a
+                technique, but to create conditions
+                for observation, experimentation,
+                curiosity and self-directed practice.
+
+            </p>
+
+
+            <div class="practice-quote">
+
+                “A space where creativity, ecology
+                and community support one another.”
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- =====================================================
+     LAND
+===================================================== -->
+
+<section class="land"
+         id="land">
+
+    <div class="container land-grid">
+
+
+        <div class="land-image">
+
+            <img src="images/land.jpg"
+                 alt="Rural landscape at Yakupitiya Baduraliya Sri Lanka"
+                 loading="lazy">
+
+        </div>
+
+
+        <div class="land-content">
+
+            <p class="small-label">
+                04 · The Land
+            </p>
+
+
+            <h2>
+                A place
+                to work,
+                observe
+                and grow.
+            </h2>
+
+
+            <p>
+
+                The rural landscape becomes part
+                of the artistic process — a place
+                where cultivation, material research,
+                workshops and creative practice can
+                happen together.
+
+            </p>
+
+
+            <div class="location">
+
+                Yakupitiya · Baduraliya · Sri Lanka
+
+            </div>
 
         </div>
 
@@ -231,588 +1718,63 @@
      JOURNAL
 ===================================================== -->
 
-<section class="section section-paper" id="journal">
+<section class="journal"
+         id="journal">
 
-    <div class="container">
+    <div class="container journal-grid">
 
-        <div class="section-heading">
 
-            <div>
+        <div class="journal-content">
 
-                <p class="section-label">
-                    PUBLICATION
-                </p>
-
-                <h2>
-                    Printmaking Journal
-                </h2>
-
-            </div>
-
-            <a href="https://printmakinglabgallery.wordpress.com/"
-               target="_blank"
-               class="text-link">
-
-                View Journal →
-
-            </a>
-
-        </div>
-
-
-        <div class="card-grid">
-
-
-            <article class="content-card">
-
-                <div class="card-image">
-                    JOURNAL
-                </div>
-
-                <div class="card-body">
-
-                    <p class="category">
-                        HISTORY
-                    </p>
-
-                    <h3>
-                        The History of Printmaking
-                    </h3>
-
-                    <p>
-                        From ancient woodblocks to
-                        contemporary print practices.
-                    </p>
-
-                    <a href="#" class="text-link">
-                        Read Article →
-                    </a>
-
-                </div>
-
-            </article>
-
-
-
-            <article class="content-card">
-
-                <div class="card-image">
-                    WOODCUT
-                </div>
-
-                <div class="card-body">
-
-                    <p class="category">
-                        TECHNIQUE
-                    </p>
-
-                    <h3>
-                        Understanding Woodcut
-                    </h3>
-
-                    <p>
-                        Exploring the material and visual
-                        language of relief printing.
-                    </p>
-
-                    <a href="#" class="text-link">
-                        Read Article →
-                    </a>
-
-                </div>
-
-            </article>
-
-
-
-            <article class="content-card">
-
-                <div class="card-image">
-                    CONTEMPORARY
-                </div>
-
-                <div class="card-body">
-
-                    <p class="category">
-                        PRACTICE
-                    </p>
-
-                    <h3>
-                        Printmaking Today
-                    </h3>
-
-                    <p>
-                        Artists expanding the possibilities
-                        of printmaking.
-                    </p>
-
-                    <a href="#" class="text-link">
-                        Read Article →
-                    </a>
-
-                </div>
-
-            </article>
-
-
-        </div>
-
-    </div>
-
-</section>
-
-
-
-<!-- =====================================================
-     EXHIBITIONS
-===================================================== -->
-
-<section class="section dark-section" id="exhibitions">
-
-    <div class="container">
-
-        <p class="section-label light">
-            EXHIBITIONS & PROJECTS
-        </p>
-
-        <h2>
-            Exhibitions & Encounters
-        </h2>
-
-        <p class="dark-introduction">
-
-            Explore exhibitions, collaborative projects
-            and artistic encounters developed through
-            The Printmaking Lab.
-
-        </p>
-
-
-        <div class="exhibition-list">
-
-
-            <a href="#" class="exhibition">
-
-                <span class="number">
-                    01
-                </span>
-
-                <div>
-
-                    <h3>
-                        Prints of Hope
-                    </h3>
-
-                    <p>
-                        International Print Exhibition
-                    </p>
-
-                </div>
-
-                <span class="arrow">
-                    →
-                </span>
-
-            </a>
-
-
-
-            <a href="#" class="exhibition">
-
-                <span class="number">
-                    02
-                </span>
-
-                <div>
-
-                    <h3>
-                        Black History +
-                    </h3>
-
-                    <p>
-                        Printmaking, history and memory
-                    </p>
-
-                </div>
-
-                <span class="arrow">
-                    →
-                </span>
-
-            </a>
-
-
-
-            <a href="#" class="exhibition">
-
-                <span class="number">
-                    03
-                </span>
-
-                <div>
-
-                    <h3>
-                        Print to Print
-                    </h3>
-
-                    <p>
-                        Artists and printmaking dialogue
-                    </p>
-
-                </div>
-
-                <span class="arrow">
-                    →
-                </span>
-
-            </a>
-
-
-
-            <a href="#" class="exhibition">
-
-                <span class="number">
-                    04
-                </span>
-
-                <div>
-
-                    <h3>
-                        The Story – II
-                    </h3>
-
-                    <p>
-                        Contemporary printmaking project
-                    </p>
-
-                </div>
-
-                <span class="arrow">
-                    →
-                </span>
-
-            </a>
-
-
-        </div>
-
-    </div>
-
-</section>
-
-
-
-<!-- =====================================================
-     ARTISTS
-===================================================== -->
-
-<section class="section" id="artists">
-
-    <div class="container">
-
-        <div class="section-heading">
-
-            <div>
-
-                <p class="section-label">
-                    PEOPLE
-                </p>
-
-                <h2>
-                    Artists
-                </h2>
-
-            </div>
-
-            <a href="#" class="text-link">
-                View All Artists →
-            </a>
-
-        </div>
-
-
-        <div class="artist-grid">
-
-
-            <article class="artist">
-
-                <div class="artist-image">
-                    ARTIST
-                </div>
-
-                <h3>
-                    Jagath Weerasinghe
-                </h3>
-
-                <p>
-                    Sri Lanka
-                </p>
-
-            </article>
-
-
-
-            <article class="artist">
-
-                <div class="artist-image">
-                    ARTIST
-                </div>
-
-                <h3>
-                    Pradeep Chandyasiri
-                </h3>
-
-                <p>
-                    Sri Lanka
-                </p>
-
-            </article>
-
-
-
-            <article class="artist">
-
-                <div class="artist-image">
-                    ARTIST
-                </div>
-
-                <h3>
-                    Prasanna Ranabahu
-                </h3>
-
-                <p>
-                    Sri Lanka
-                </p>
-
-            </article>
-
-
-
-            <article class="artist">
-
-                <div class="artist-image">
-                    ARTIST
-                </div>
-
-                <h3>
-                    Miguel Barros
-                </h3>
-
-                <p>
-                    Canada
-                </p>
-
-            </article>
-
-
-        </div>
-
-    </div>
-
-</section>
-
-
-
-<!-- =====================================================
-     VIDEOS
-===================================================== -->
-
-<section class="section section-paper" id="videos">
-
-    <div class="container">
-
-        <div class="section-heading">
-
-            <div>
-
-                <p class="section-label">
-                    WATCH
-                </p>
-
-                <h2>
-                    Videos
-                </h2>
-
-            </div>
-
-            <a href="#"
-               class="text-link">
-
-                Visit YouTube →
-
-            </a>
-
-        </div>
-
-
-        <div class="video-grid">
-
-
-            <article class="video">
-
-                <div class="video-placeholder">
-                    YOUTUBE
-                </div>
-
-                <p class="category">
-                    HISTORY
-                </p>
-
-                <h3>
-                    The History of Printmaking
-                </h3>
-
-            </article>
-
-
-
-            <article class="video">
-
-                <div class="video-placeholder">
-                    YOUTUBE
-                </div>
-
-                <p class="category">
-                    TECHNIQUE
-                </p>
-
-                <h3>
-                    Understanding Printmaking
-                </h3>
-
-            </article>
-
-
-
-            <article class="video">
-
-                <div class="video-placeholder">
-                    YOUTUBE
-                </div>
-
-                <p class="category">
-                    ARTISTS
-                </p>
-
-                <h3>
-                    Artist & Exhibition Stories
-                </h3>
-
-            </article>
-
-
-        </div>
-
-    </div>
-
-</section>
-
-
-
-<!-- =====================================================
-     ARTICLES
-===================================================== -->
-
-<section class="section" id="articles">
-
-    <div class="container two-column">
-
-        <div>
-
-            <p class="section-label">
-                IDEAS
+            <p class="small-label">
+                05 · Printmaking Journal
             </p>
+
 
             <h2>
-                Articles
-                & Research
+                Printmaking
+                Journal
             </h2>
 
-        </div>
-
-
-        <div>
-
-            <p class="large-copy">
-
-                Essays, interviews, research and critical
-                writing around printmaking, contemporary
-                art, visual culture and artistic practice.
-
-            </p>
-
-            <a href="#"
-               class="text-link">
-
-                Explore Articles →
-
-            </a>
-
-        </div>
-
-    </div>
-
-</section>
-
-
-
-<!-- =====================================================
-     ART INVESTMENT LAB
-===================================================== -->
-
-<section class="investment" id="investment">
-
-    <div class="container investment-layout">
-
-        <div>
-
-            <p class="section-label light">
-                ART & MARKET
-            </p>
-
-            <h2>
-                Art Investment Lab
-            </h2>
 
             <p>
 
-                Exploring artists, artworks, collecting,
-                cultural value and the contemporary
-                art market.
+                The Printmaking Lab is developing
+                a new publication exploring the
+                history, practice, artists, techniques
+                and contemporary possibilities
+                of printmaking.
 
             </p>
 
-            <a href="#"
-               class="button button-light">
 
-                Explore Art Investment
+            <p>
+
+                The Journal will connect artistic
+                practice, research, documentation
+                and international exchange.
+
+            </p>
+
+
+            <a href="https://printmakinglabgallery.wordpress.com/"
+               target="_blank"
+               rel="noopener"
+               class="button">
+
+                Visit The Printmaking Lab
+                <span>→</span>
 
             </a>
 
         </div>
 
 
-        <div class="investment-statement">
+        <div class="journal-image">
 
-            <span>
-                ART
-            </span>
-
-            <strong>
-                +
-            </strong>
-
-            <span>
-                VALUE
-            </span>
-
-            <strong>
-                +
-            </strong>
-
-            <span>
-                RESEARCH
-            </span>
+            <img src="images/journal.jpg"
+                 alt="Printmaking Journal project by The Printmaking Lab"
+                 loading="lazy">
 
         </div>
 
@@ -823,44 +1785,152 @@
 
 
 <!-- =====================================================
-     SUPPORT
+     ART & ORGANIC FARMING — FINAL PROJECT SECTION
 ===================================================== -->
 
-<section class="support">
+<section class="organic">
 
-    <div class="container support-content">
+    <div class="container">
 
-        <p class="section-label">
-            SUPPORT & COLLABORATION
-        </p>
 
-        <h2>
-            Help build a living platform
-            for printmaking and contemporary art.
+        <div class="organic-header">
+
+            <div>
+
+                <p class="small-label">
+                    06 · Art &amp; Organic Farming
+                </p>
+
+            </div>
+
+            <div>
+
+                <p class="small-label">
+                    The Printmaking Lab
+                </p>
+
+            </div>
+
+        </div>
+
+
+        <h2 class="organic-title">
+
+            Where art
+            grows with
+            the land.
+
         </h2>
 
-        <p>
 
-            Support exhibitions, publications,
-            education, research, workshops and
-            international collaboration.
-
-        </p>
+        <div class="organic-grid"
+             style="margin-top:70px;">
 
 
-        <div class="support-buttons">
+            <div class="organic-image">
 
-            <a href="#"
-               class="button button-dark">
+                <img src="images/organic-farming.jpg"
+                     alt="Art and Organic Farming at The Printmaking Lab in Sri Lanka"
+                     loading="lazy">
 
-                Support The Lab
+            </div>
 
-            </a>
 
-            <a href="#"
-               class="button button-outline">
+            <div class="organic-copy">
 
-                Collaborate
+                <p>
+
+                    Art &amp; Organic Farming brings
+                    together artistic practice, organic
+                    cultivation, natural materials and
+                    hands-on learning.
+
+                </p>
+
+
+                <p>
+
+                    Through workshops and independent
+                    practice, participants can explore
+                    the relationship between making,
+                    cultivation, materials and place.
+
+                </p>
+
+
+                <div class="organic-links">
+
+                    <a href="https://printmakinglabgallery.wordpress.com/art-and-organic-farming-new-project/"
+                       target="_blank"
+                       rel="noopener"
+                       class="button">
+
+                        Explore the Project
+                        <span>→</span>
+
+                    </a>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- =====================================================
+     ABOUT / COLLABORATION
+===================================================== -->
+
+<section class="contact"
+         id="about">
+
+    <div class="container contact-grid">
+
+
+        <div>
+
+            <p class="small-label">
+                The Printmaking Lab
+            </p>
+
+
+            <h2>
+
+                Art.
+                Printmaking.
+                Research.
+                Collaboration.
+
+            </h2>
+
+        </div>
+
+
+        <div>
+
+            <p class="contact-copy">
+
+                The Printmaking Lab is an
+                artist-led platform from Sri Lanka
+                working across printmaking,
+                contemporary art, research,
+                education and international
+                collaboration.
+
+            </p>
+
+
+            <a href="https://printmakinglabgallery.wordpress.com/"
+               target="_blank"
+               rel="noopener"
+               class="contact-link">
+
+                Visit the Main Archive →
 
             </a>
 
@@ -869,6 +1939,7 @@
     </div>
 
 </section>
+
 
 </main>
 
@@ -878,20 +1949,100 @@
      FOOTER
 ===================================================== -->
 
-<footer class="footer">
+<footer>
 
-    <div class="container footer-grid">
+    <div class="container">
 
 
-        <div class="footer-brand">
+        <div class="footer-grid">
 
-            <h3>
-                THE PRINTMAKING LAB
-            </h3>
+
+            <div>
+
+                <div class="footer-logo">
+                    THE PRINTMAKING LAB
+                </div>
+
+
+                <p class="footer-description">
+
+                    An artist-led platform exploring
+                    printmaking, contemporary art,
+                    research, education and
+                    collaboration from Sri Lanka.
+
+                </p>
+
+            </div>
+
+
+            <div class="footer-column">
+
+                <h4>
+                    Explore
+                </h4>
+
+
+                <a href="#project">
+                    Project
+                </a>
+
+                <a href="#workshops">
+                    Workshops
+                </a>
+
+                <a href="#land">
+                    Land
+                </a>
+
+                <a href="#journal">
+                    Journal
+                </a>
+
+            </div>
+
+
+            <div class="footer-column">
+
+                <h4>
+                    Online
+                </h4>
+
+
+                <a href="https://printmakinglabgallery.wordpress.com/"
+                   target="_blank"
+                   rel="noopener">
+
+                    Main Archive
+
+                </a>
+
+
+                <a href="https://printmakinglabgallery.wordpress.com/art-and-organic-farming-new-project/"
+                   target="_blank"
+                   rel="noopener">
+
+                    Art &amp; Organic Farming
+
+                </a>
+
+
+                <a href="#about">
+                    About
+                </a>
+
+            </div>
+
+        </div>
+
+
+        <div class="footer-bottom">
 
             <p>
-                Art • Printmaking • Research • Collaboration
+                © 2026 The Printmaking Lab.
+                All rights reserved.
             </p>
+
 
             <p>
                 Sri Lanka
@@ -899,98 +2050,9 @@
 
         </div>
 
-
-        <div>
-
-            <h4>
-                Explore
-            </h4>
-
-            <a href="#journal">
-                Journal
-            </a>
-
-            <a href="#exhibitions">
-                Exhibitions
-            </a>
-
-            <a href="#artists">
-                Artists
-            </a>
-
-            <a href="#videos">
-                Videos
-            </a>
-
-        </div>
-
-
-        <div>
-
-            <h4>
-                Research
-            </h4>
-
-            <a href="#articles">
-                Articles
-            </a>
-
-            <a href="#investment">
-                Art Investment
-            </a>
-
-            <a href="#about">
-                About
-            </a>
-
-        </div>
-
-
-        <div>
-
-            <h4>
-                Online
-            </h4>
-
-            <a href="https://printmakinglabgallery.wordpress.com/"
-               target="_blank">
-
-                WordPress
-
-            </a>
-
-            <a href="#">
-                YouTube
-            </a>
-
-            <a href="#">
-                Instagram
-            </a>
-
-            <a href="#">
-                Facebook
-            </a>
-
-        </div>
-
-    </div>
-
-
-    <div class="container footer-bottom">
-
-        <p>
-            © 2026 The Printmaking Lab.
-            All rights reserved.
-        </p>
-
-        <p>
-            Founded by Buddhika Nakandala
-        </p>
-
     </div>
 
 </footer>
-
 
 
 </body>
